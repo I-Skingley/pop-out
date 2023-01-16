@@ -1,0 +1,46 @@
+img {
+    max-width: 100%;
+}
+
+.container {
+    position:relative;
+    width: 10em;    
+    top: 0;
+    left: 15rem; /* Just to get the image away from the edge of the screen */
+    transition: transform 300ms ease-out;
+    border-radius:0 0 100vw 100vw;  /* Round bottom edges of container */
+    overflow: hidden; /* Hide elements that exceed the 0 0 100vw 100vw bounds*/
+    pointer-events: none; /* Ensure hover only over images */
+}
+
+.parent {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    height:20em;
+    pointer-events: none;
+}
+
+.background {
+    position:absolute;  /* To stack images */
+    bottom: 0;
+    left: 0;
+    border-radius:100vw 100vw 100vw 100vw; /* Make into a circle */
+    pointer-events: auto; /* Ensure hover only over images */
+}
+
+.person {
+    position:absolute; /* To stack images */
+    bottom: 0;
+    left: 0;
+    transition: transform 200ms ease-out;
+    /* pointer-events: auto; */ /* Ensure hover only over images */
+}
+
+.container:hover {
+    transform:scale(1.15) translateY(-.75rem);
+}
+
+.container:hover .person {
+    transform:scale(1.1) translateY(-1.25rem);
+}
